@@ -1,0 +1,277 @@
+!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #e8d7ff, #ffe4ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  color: #7b2855;
+}
+
+.container {
+  width: 90%;
+  max-width: 430px;
+  padding: 28px 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(160, 60, 110, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+h1 {
+  font-size: 25px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  margin: 8px 4px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff6fae;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 90, 150, 0.2);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.no {
+  background: #aaa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#musicBox {
+  margin-top: 22px;
+}
+
+video {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.petal {
+  position: fixed;
+  top: -30px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0.2;
+  }
+}
+
+.small {
+  font-size: 13px;
+  color: #a15c82;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ပထမစာမျက်နှာ -->
+  <section id="first">
+    <div class="heart">❤️</div>
+
+    <h1>ဟေး... နင် 💗</h1>
+
+    <p>
+      ငါ နင့်ကို ပြောချင်တာတစ်ခုရှိတယ်။<br>
+      သိချင်လား။ 🥺
+    </p>
+
+    <button onclick="next()">သိချင်တယ် ❤️</button>
+
+    <button class="no" onclick="grow()">
+      မသိချင်ဘူး 🙈
+    </button>
+
+    <p id="hint" class="small"></p>
+  </section>
+
+
+  <!-- ဒုတိယစာမျက်နှာ -->
+  <section id="second" class="hidden">
+    <div class="heart">💌</div>
+
+    <h1>နင့်ကို ပြောချင်တာလေး...</h1>
+
+    <p>
+      နင်နဲ့ စကားပြောရတဲ့အချိန်တွေက<br>
+      ငါ့အတွက် ပျော်စရာလေးတွေပါ။ 💗
+      <br><br>
+      တကယ်တော့...<br>
+      <strong>ငါ နင့်ကို သဘောကျနေမိပြီ။ 🥺❤️</strong>
+    </p>
+
+    <p>နင်ရော ငါ့ကို ဘယ်လိုသဘောထားလဲ။</p>
+
+    <button onclick="happy()">ချစ်တယ် ❤️</button>
+
+    <button class="no" onclick="noLove()">မချစ်ဘူး 💔</button>
+
+    <div id="musicBox">
+      <h3>🎵 Our Little Song 🎵</h3>
+      <p class="small">လေးဖြူ — သံယောဇဉ် ❤️</p>
+
+      <video id="player" controls playsinline preload="metadata">
+        <source src="than-yone-gyin.mp4" type="video/mp4">
+        သင့် Browser က ဒီဗီဒီယိုကို ဖွင့်မရပါ။
+      </video>
+
+      <p class="small">
+        သီချင်းမဖွင့်ရင် Play ကိုနှိပ်ပါ။ 🎧
+      </p>
+    </div>
+  </section>
+
+
+  <!-- တတိယစာမျက်နှာ -->
+  <section id="third" class="hidden">
+    <div class="heart">💖</div>
+
+    <h1>တကယ်လား... 🥹❤️</h1>
+
+    <p>
+      ဒီအဖြေလေးကြောင့် ငါ အရမ်းပျော်သွားပြီ။<br>
+      နင့်ရဲ့အပြုံးလေးတွေ အမြဲရှိနေပါစေ။ 🌷
+      <br><br>
+      <strong>Thank You, My Favorite Person. 💗</strong>
+    </p>
+
+    <button onclick="again()">အစကနေ ပြန်ကြည့်မယ် 💕</button>
+  </section>
+
+
+  <!-- မချစ်ဘူးဆိုတဲ့အဖြေအတွက် -->
+  <section id="rejection" class="hidden">
+    <div class="heart">🌷</div>
+
+    <h1>ရပါတယ်နော် ❤️</h1>
+
+    <p>
+      နင့်ရဲ့ခံစားချက်ကို ငါ လေးစားပါတယ်။<br>
+      ရိုးရိုးသားသား ဖြေပေးလို့ ကျေးဇူးပါ။ 💗
+    </p>
+
+    <button onclick="again()">အစကနေ ပြန်ကြည့်မယ်</button>
+  </section>
+
+</div>
+
+
+<script>
+function next() {
+  document.getElementById("first").classList.add("hidden");
+  document.getElementById("second").classList.remove("hidden");
+
+  const player = document.getElementById("player");
+
+  // ခလုတ်နှိပ်တဲ့အချိန်မှာ သီချင်းဖွင့်ဖို့ ကြိုးစားမယ်။
+  player.play().catch(function() {
+    // Browser က ခွင့်မပြုရင် Play ကို ကိုယ်တိုင်နှိပ်နိုင်တယ်။
+  });
+}
+
+function grow() {
+  const hint = document.getElementById("hint");
+  hint.textContent = "ဟာ... တစ်ချက်လောက်တော့ နားထောင်ပေးပါဦး 🥺❤️";
+
+  const buttons = document.querySelectorAll("#first button");
+  buttons[0].style.transform = "scale(1.08)";
+}
+
+function happy() {
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("third").classList.remove("hidden");
+
+  // ချစ်တယ် ❤️ ကို နှိပ်မှ ပန်းဖတ်လေးတွေ ကြွေမယ်။
+  for (let i = 0; i < 35; i++) {
+    setTimeout(makePetal, i * 120);
+  }
+}
+
+function noLove() {
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("rejection").classList.remove("hidden");
+}
+
+function again() {
+  document.getElementById("third").classList.add("hidden");
+  document.getElementById("rejection").classList.add("hidden");
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("first").classList.remove("hidden");
+
+  const player = document.getElementById("player");
+  player.pause();
+  player.currentTime = 0;
+
+  document.getElementById("hint").textContent = "";
+}
+
+function makePetal() {
+  const petal = document.createElement("div");
+
+  const petals = ["🌸", "🌷", "💗", "🌺", "💕"];
+  petal.className = "petal";
+  petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.fontSize = (15 + Math.random() * 20) + "px";
+  petal.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(function() {
+    petal.remove();
+  }, 7500);
+}
+</script>
+
+</body>
+</html>
