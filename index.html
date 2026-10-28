@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For You ❤️</title><style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #e8d7ff, #ffe4ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+  color: #7b2855;
+  padding: 20px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 430px;
+  padding: 28px 20px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(160, 60, 110, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+h1 {
+  font-size: 25px;
+}
+
+p {
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  margin: 8px 4px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff6fae;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 90, 150, 0.2);
+  transition: transform 0.2s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.no {
+  background: #aaa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.small {
+  font-size: 13px;
+  color: #a15c82;
+}
+
+.petal {
+  position: fixed;
+  top: -35px;
+  z-index: 5;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0.15;
+  }
+}
+</style></head><body><div class="container">  <!-- ပထမစာမျက်နှာ -->  <section id="first"><div class="heart">❤️</div>
+
+<h1>ဟေး... နင် 💗</h1>
+
+<p>
+  ငါ နင့်ကို ပြောချင်တာတစ်ခုရှိတယ်။<br>
+  သိချင်လား။ 🥺
+</p>
+
+<button onclick="nextPage()">
+  သိချင်တယ် ❤️
+</button>
+
+<button class="no" onclick="showHint()">
+  မသိချင်ဘူး 🙈
+</button>
+
+<p id="hint" class="small"></p>
+
+  </section>  <!-- ဒုတိယစာမျက်နှာ -->  <section id="second" class="hidden"><div class="heart">💌</div>
+
+<h1>နင့်ကို ပြောချင်တာလေး...</h1>
+
+<p>
+  နင်မသိသေးတဲ့ ငါ့ရင်ထဲက<br>
+  ခံစားချက်လေးတစ်ခုရှိတယ်။ 💗
+  <br><br>
+
+  နင့်ကို မြင်ရတဲ့အချိန်တိုင်း၊<br>
+  နင်နဲ့ စကားပြောရတဲ့အချိန်တိုင်း<br>
+  ငါ့အတွက် အမှတ်တရလေးတွေ ဖြစ်နေတယ်။
+  <br><br>
+
+  <strong>
+    တကယ်တော့ ငါ နင့်ကို သဘောကျနေမိပြီ။ ❤️
+  </strong>
+</p>
+
+<h3>နင်ရော ငါ့ကို ချစ်လား။ 🥺</h3>
+
+<button onclick="happyPage()">
+  ချစ်တယ် ❤️
+</button>
+
+<button class="no" onclick="sadPage()">
+  မချစ်ဘူး 💔
+</button>
+
+<p class="small">
+  နင့်ရဲ့ခံစားချက်ကို ရိုးရိုးသားသား ပြောပေးနော်။ 🌷
+</p>
+
+  </section>  <!-- ချစ်တယ်လို့ ဖြေတဲ့စာမျက်နှာ -->  <section id="third" class="hidden"><div class="heart">💖</div>
+
+<h1>တကယ်လားဟင်! 🥹❤️</h1>
+
+<p>
+  နင် ဒီလိုဖြေပေးတာကြောင့်<br>
+  ငါ အရမ်းပျော်သွားပြီ။ 💗
+  <br><br>
+
+  နင်နဲ့အတူ ပျော်စရာအမှတ်တရလေးတွေ<br>
+  ဖန်တီးသွားချင်တယ်။ 🌸
+  <br><br>
+
+  <strong>
+    Thank You, My Favorite Person. 💕
+  </strong>
+</p>
+
+<button onclick="restartPage()">
+  အစကနေ ပြန်ကြည့်မယ် 💌
+</button>
+
+  </section>  <!-- မချစ်ဘူးလို့ ဖြေတဲ့စာမျက်နှာ -->  <section id="fourth" class="hidden"><div class="heart">🌷</div>
+
+<h1>ရပါတယ်နော် ❤️</h1>
+
+<p>
+  နင့်ရဲ့ခံစားချက်ကို ငါ လေးစားပါတယ်။
+  <br><br>
+
+  ရိုးရိုးသားသား ဖြေပေးလို့ ကျေးဇူးပါ။ 💗
+  <br><br>
+
+  ဘာပဲဖြစ်ဖြစ် နင် ပျော်ရွှင်နေရင် ကောင်းပါတယ်။ 🌸
+</p>
+
+<button onclick="restartPage()">
+  အစကနေ ပြန်ကြည့်မယ် 💌
+</button>
+
+  </section></div><script>
+function nextPage() {
+  document.getElementById("first").classList.add("hidden");
+  document.getElementById("second").classList.remove("hidden");
+}
+
+function showHint() {
+  document.getElementById("hint").textContent =
+    "တစ်ချက်လောက်တော့ နားထောင်ပေးပါဦးနော် 🥺❤️";
+}
+
+function happyPage() {
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("third").classList.remove("hidden");
+
+  // ပန်းဖတ်လေးတွေ ကြွေကျမယ်
+  for (let i = 0; i < 35; i++) {
+    setTimeout(makePetal, i * 150);
+  }
+}
+
+function sadPage() {
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("fourth").classList.remove("hidden");
+}
+
+function restartPage() {
+  document.getElementById("first").classList.remove("hidden");
+  document.getElementById("second").classList.add("hidden");
+  document.getElementById("third").classList.add("hidden");
+  document.getElementById("fourth").classList.add("hidden");
+
+  document.getElementById("hint").textContent = "";
+}
+
+function makePetal() {
+  const petal = document.createElement("div");
+
+  const flowers = ["🌸", "🌷", "💗", "🌺", "💕"];
+
+  petal.className = "petal";
+  petal.textContent =
+    flowers[Math.floor(Math.random() * flowers.length)];
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.fontSize = (15 + Math.random() * 20) + "px";
+  petal.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(function() {
+    petal.remove();
+  }, 7500);
+}
+</script></body>
+</html>
